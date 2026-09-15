@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Production-ready Swift 6.4, SwiftUI, and SwiftData guidance for GitHub Copilot, Copilot for Xcode, and Claude Code.">
+  <meta property="og:title" content="iOS Swift Master">
+  <meta property="og:description" content="A complete Apple-platform engineering skill for GitHub Copilot and Claude Code.">
+  <meta property="og:image" content="https://sahinraj.github.io/ios-swift-master-copilot/assets/social-preview.png">
+  <meta property="og:url" content="https://sahinraj.github.io/ios-swift-master-copilot/">
+  <meta name="theme-color" content="#070b16">
+  <title>iOS Swift Master</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="iOS Swift Master home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>iOS Swift Master</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/sahinraj/ios-swift-master-copilot">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">Swift 6.4 · SwiftUI · SwiftData · Xcode 27</div>
+      <h1>Give your coding agent<br><span>principal-level Swift judgment.</span></h1>
+      <p class="hero-copy">A focused skill, custom agent, and instruction set for building, reviewing, migrating, testing, and debugging modern Apple-platform apps.</p>
+      <div class="actions">
+        <a class="button primary" href="#install">Install now</a>
+        <a class="button secondary" href="https://github.com/sahinraj/ios-swift-master-copilot">View source</a>
+      </div>
+      <div class="terminal" role="region" aria-label="Installation command">
+        <span class="prompt">$</span>
+        <code>git clone https://github.com/sahinraj/ios-swift-master-copilot.git</code>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Project highlights">
+      <div><strong>17</strong><span>focused references</span></div>
+      <div><strong>4</strong><span>supported agent surfaces</span></div>
+      <div><strong>1</strong><span>safe installer</span></div>
+      <div><strong>MIT</strong><span>open-source license</span></div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">Complete coverage</span>
+        <h2>One toolkit for serious Apple-platform work.</h2>
+      </div>
+      <div class="cards">
+        <article>
+          <span class="number">01</span>
+          <h3>Language and concurrency</h3>
+          <p>Swift 6 migration, actors, isolation, Sendable, cancellation, ownership, generics, macros, and compile-safe patterns.</p>
+        </article>
+        <article>
+          <span class="number">02</span>
+          <h3>SwiftUI architecture</h3>
+          <p>Observation, data flow, identity, performance, navigation, layout, Liquid Glass, accessibility, and localization.</p>
+        </article>
+        <article>
+          <span class="number">03</span>
+          <h3>Persistence and platform</h3>
+          <p>SwiftData models and migrations, CloudKit, UIKit interop, widgets, App Intents, background work, networking, and security.</p>
+        </article>
+        <article>
+          <span class="number">04</span>
+          <h3>Quality and delivery</h3>
+          <p>Swift Testing, XCTest, code review, Instruments, crash analysis, modular architecture, and enterprise iPad reliability.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section compatibility">
+      <div>
+        <span class="eyebrow">Use it where you work</span>
+        <h2>One source of truth across your tools.</h2>
+      </div>
+      <ul>
+        <li><span>01</span>VS Code with GitHub Copilot</li>
+        <li><span>02</span>GitHub Copilot CLI</li>
+        <li><span>03</span>Copilot for Xcode</li>
+        <li><span>04</span>Claude Code</li>
+      </ul>
+    </section>
+
+    <section id="install" class="section install">
+      <span class="eyebrow">Three commands</span>
+      <h2>Start using it in minutes.</h2>
+      <div class="code-block">
+        <button type="button" id="copy" aria-label="Copy installation commands">Copy</button>
+        <pre><code id="commands">git clone https://github.com/sahinraj/ios-swift-master-copilot.git
+cd ios-swift-master-copilot
+./install.sh personal</code></pre>
+      </div>
+      <p>For Copilot for Xcode or a team repository, run <code>./install.sh project ~/path/to/YourApp</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Built by Sahin Nisar Raj</span>
+    <span>Independent community project · MIT licensed</span>
+  </footer>
+
+  <script>
+    const button = document.querySelector('#copy');
+    button.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(document.querySelector('#commands').textContent);
+      button.textContent = 'Copied';
+      setTimeout(() => { button.textContent = 'Copy'; }, 1600);
+    });
+  </script>
+</body>
+</html>

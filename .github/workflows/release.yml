@@ -1,0 +1,33 @@
+name: Publish v1.0.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build release archive
+        run: |
+          mkdir -p dist
+          git archive --format=zip --prefix=ios-swift-master-copilot/ --output=dist/ios-swift-master-copilot-v1.0.0.zip HEAD
+      - name: Publish release if missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0 >/dev/null 2>&1; then
+            echo "v1.0.0 already exists"
+          else
+            gh release create v1.0.0 dist/ios-swift-master-copilot-v1.0.0.zip \
+              --target "$GITHUB_SHA" \
+              --title "iOS Swift Master v1.0.0" \
+              --notes "Initial public release with the Swift 6.4 skill, custom Copilot agent, 17 focused reference guides, project and personal installers, validation tests, and documentation."
+          fi

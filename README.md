@@ -6,6 +6,8 @@ Version 1.0.0, built September 2026 against Swift 6.4 and the WWDC26 SwiftUI and
 
 This is an independent community project and is not affiliated with or endorsed by Apple, GitHub, Microsoft, or Anthropic.
 
+[Website](https://sahinraj.github.io/ios-swift-master-copilot/) · [Latest release](https://github.com/sahinraj/ios-swift-master-copilot/releases/latest) · [Report an issue](https://github.com/sahinraj/ios-swift-master-copilot/issues)
+
 ## Quick start
 
 Clone the repository, validate the package, and install it for your user account:
