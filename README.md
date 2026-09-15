@@ -1,5 +1,11 @@
 # iOS Swift Master for GitHub Copilot
 
+![iOS Swift Master: principal-level Swift engineering guidance for coding agents](docs/assets/social-preview.png)
+
+[![Validate](https://github.com/sahinraj/ios-swift-master-copilot/actions/workflows/validate.yml/badge.svg)](https://github.com/sahinraj/ios-swift-master-copilot/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/github/v/release/sahinraj/ios-swift-master-copilot)](https://github.com/sahinraj/ios-swift-master-copilot/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-62e6bd.svg)](LICENSE)
+
 A master skill, custom agent and instruction set that makes GitHub Copilot an expert in Swift 6.4, SwiftUI and SwiftData for the 2027 SDKs (iOS 27, Xcode 27). It works in VS Code, Copilot CLI, Copilot cloud agent, Copilot code review and Copilot for Xcode, and the same skill also works in Claude Code.
 
 Version 1.0.0, built September 2026 against Swift 6.4 and the WWDC26 SwiftUI and SwiftData releases.
