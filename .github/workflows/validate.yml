@@ -25,3 +25,5 @@ jobs:
         run: bash tests/bootstrap_test.sh
       - name: Test eval harness
         run: bash tests/evals_test.sh
+      - name: Test eval collector
+        run: bash tests/collect_test.sh
