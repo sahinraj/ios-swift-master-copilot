@@ -1,0 +1,4 @@
++ VersionedSchema	defines versioned schemas
++ SchemaMigrationPlan	adds a migration plan
++ willMigrate	dedupes in a custom stage before the constraint
++ @Attribute\(\.unique\)|#Unique	adds the uniqueness constraint

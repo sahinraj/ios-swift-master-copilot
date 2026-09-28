@@ -1,0 +1,3 @@
++ SecItemAdd|Keychain	uses the Keychain
++ kSecAttrAccessible	sets an accessibility class
+- UserDefaults\.standard\.set	does not store secrets in UserDefaults

@@ -1,0 +1,6 @@
++ import Testing	uses Swift Testing
++ @Test\(	uses @Test with arguments
++ arguments:	parameterizes the cases
++ #expect	uses #expect
+- XCTAssert	does not use XCTest assertions
+- XCTestCase	does not subclass XCTestCase

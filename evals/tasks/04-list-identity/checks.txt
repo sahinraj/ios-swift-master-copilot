@@ -1,0 +1,2 @@
++ Identifiable|id: \\\.id	uses stable identity
+- indices, id: \\\.self	removes index-based identity

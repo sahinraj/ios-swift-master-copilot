@@ -16,8 +16,12 @@ jobs:
         with:
           persist-credentials: false
       - name: Check shell syntax
-        run: bash -n install.sh tests/install_test.sh
+        run: bash -n install.sh docs/install.sh evals/score.sh tests/*.sh
       - name: Verify package
         run: ./install.sh verify
       - name: Test install and uninstall
         run: bash tests/install_test.sh
+      - name: Test one-line bootstrap
+        run: bash tests/bootstrap_test.sh
+      - name: Test eval harness
+        run: bash tests/evals_test.sh

@@ -3,3 +3,4 @@ graphify-out/
 *.backup-*
 *.zip
 
+evals/results/
