@@ -17,7 +17,8 @@ export IOS_SWIFT_MASTER_REPO="$ROOT"
 export IOS_SWIFT_MASTER_HOME="$TEST_ROOT/checkout"
 mkdir -p "$HOME"
 
-bash "$ROOT/docs/install.sh" >/dev/null
+out="$(bash "$ROOT/docs/install.sh")"
+grep -q "curl -fsSL .* | bash -s -- project" <<<"$out" || fail "bootstrap should print the curl project hint"
 [[ -L "$HOME/.copilot/skills/ios-swift-master" ]] || fail "skill not linked"
 [[ -L "$HOME/.copilot/agents/ios-swift-master.agent.md" ]] || fail "agent not linked"
 

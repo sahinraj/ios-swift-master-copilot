@@ -158,7 +158,12 @@ install_personal() {
   fi
   echo
   info "Next: restart VS Code (or run /skills reload in Copilot CLI)."
-  info "Copilot for Xcode needs a project install: ./install.sh project /path/to/repo"
+  if [[ -n "${IOS_SWIFT_MASTER_BOOTSTRAP:-}" ]]; then
+    info "Copilot for Xcode needs a project install:"
+    info "  curl -fsSL $IOS_SWIFT_MASTER_BOOTSTRAP | bash -s -- project /path/to/repo"
+  else
+    info "Copilot for Xcode needs a project install: ./install.sh project /path/to/repo"
+  fi
 }
 
 install_project() {
