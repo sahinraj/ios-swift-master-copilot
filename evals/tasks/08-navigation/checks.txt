@@ -1,0 +1,5 @@
++ NavigationStack	uses NavigationStack
++ navigationDestination	uses navigationDestination
++ NavigationPath|\[Recipe\]	binds a path
+- NavigationView	does not use NavigationView
+- NavigationLink\(destination:	does not use destination-based links

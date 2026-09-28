@@ -1,0 +1,5 @@
++ @Observable	uses the Observation macro
++ @State (private )?var model	owns the model with @State
+- ObservableObject	drops ObservableObject
+- @Published	drops @Published
+- @StateObject	drops @StateObject

@@ -1,0 +1,3 @@
++ accessibilityElement\(children:	combines children into one element
++ accessibilityValue	exposes the current value
++ accessibilityAdjustableAction	supports swipe up/down to adjust

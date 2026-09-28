@@ -1,0 +1,3 @@
++ defaultIsolation	uses the defaultIsolation setting
++ MainActor\.self	passes MainActor.self
+- @preconcurrency import SwiftUI	does not paper over with @preconcurrency

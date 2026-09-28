@@ -1,0 +1,3 @@
++ actor ImageCache	makes the cache an actor
+- @unchecked Sendable	does not use @unchecked Sendable
+- nonisolated\(unsafe\)	does not use nonisolated(unsafe)

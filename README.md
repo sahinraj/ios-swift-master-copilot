@@ -16,20 +16,20 @@ This is an independent community project and is not affiliated with or endorsed 
 
 ## Quick start
 
-Clone the repository, validate the package, and install it for your user account:
+One line, for your user account (VS Code and Copilot CLI):
 
 ```bash
-git clone https://github.com/sahinraj/ios-swift-master-copilot.git
-cd ios-swift-master-copilot
-./install.sh verify
-./install.sh personal
+curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash
 ```
 
-For Copilot for Xcode or a shared team repository, use a project install instead:
+Add Claude Code too, or install into a repo for Copilot for Xcode and your team:
 
 ```bash
-./install.sh project ~/path/to/YourApp
+curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash -s -- personal --claude
+curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash -s -- project ~/path/to/YourApp
 ```
+
+The script clones the repo into `~/.ios-swift-master` (override with `IOS_SWIFT_MASTER_HOME`), verifies the package and runs `install.sh` with your arguments. Run it again any time to update. If you'd rather read the script first, see [docs/install.sh](docs/install.sh) or use the manual install below.
 
 ## What's inside
 
@@ -56,6 +56,7 @@ ios-swift-master-copilot/
 │       ├── performance-debugging.md            Crashes, hangs, leaks, Instruments, build times
 │       ├── enterprise-ipad.md                  Offline-first, MDM, audit trails, time zones
 │       └── code-review-checklist.md            Severity-based review checklist
+├── evals/                                      Benchmark tasks and scorer (with vs without the skill)
 ├── agents/ios-swift-master.agent.md            "iOS Swift Master" custom agent
 └── instructions/
     ├── swift.instructions.md                   Always-on rules for **/*.swift
@@ -82,21 +83,18 @@ Copilot for Xcode supports custom agents and instruction files but does not docu
   - Copilot for Xcode 0.48.0 or later (custom agents are generally available from 0.48.0)
 - A Copilot plan that includes agent mode.
 
-## Step 1: Put the package somewhere permanent
+## Step 1: Manual install (optional)
 
-The personal install uses symlinks back to this folder, so don't leave it in Downloads.
+Skip this if you used the one-line install. The personal install symlinks back to this folder, so clone it somewhere permanent rather than a temp or Downloads folder:
 
 ```bash
-mkdir -p ~/Developer
-mv ~/Downloads/ios-swift-master-copilot.zip ~/Developer/
-cd ~/Developer
-unzip -o ios-swift-master-copilot.zip
+mkdir -p ~/Developer && cd ~/Developer
+git clone https://github.com/sahinraj/ios-swift-master-copilot.git
 cd ios-swift-master-copilot
-chmod +x install.sh
 ./install.sh verify
 ```
 
-`verify` should report the package as valid with 17 reference files.
+`verify` should report the package as valid with 17 reference files. You can also download the zip from the [latest release](https://github.com/sahinraj/ios-swift-master-copilot/releases/latest), unzip it in the same place and run the same command.
 
 ## Step 2A: Personal install (VS Code and Copilot CLI, all projects)
 
@@ -184,11 +182,20 @@ Export them, then place each exported skill folder in `~/.copilot/skills/` (and 
 ## Updating
 
 ```bash
-cd ~/Developer/ios-swift-master-copilot
-# replace files with a newer version or edit references directly
-./install.sh personal                  # re-links, safe to repeat
-./install.sh project ~/path/to/YourApp # re-copies, updates the managed block
+curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash          # one-line install: pulls the latest and re-links
+cd ~/Developer/ios-swift-master-copilot && git pull && ./install.sh personal   # manual install
+./install.sh project ~/path/to/YourApp   # re-copies, updates the managed block
 ```
+
+## Benchmark
+
+`evals/` holds ten real Swift tasks (Observation migration, Sendable fixes, SwiftData migrations, Swift Testing, navigation, Keychain, accessibility and more), each with checks for current APIs it should use and outdated ones it should avoid. Run the prompts with and without the skill, save the answers and compare:
+
+```bash
+evals/score.sh evals/results/baseline evals/results/with-skill
+```
+
+See [evals/README.md](evals/README.md) for how to run it and add tasks.
 
 ## Uninstalling
 

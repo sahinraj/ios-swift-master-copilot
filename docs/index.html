@@ -36,7 +36,7 @@
       </div>
       <div class="terminal" role="region" aria-label="Installation command">
         <span class="prompt">$</span>
-        <code>git clone https://github.com/sahinraj/ios-swift-master-copilot.git</code>
+        <code>curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash</code>
       </div>
     </section>
 
@@ -94,11 +94,9 @@
       <h2>Start using it in minutes.</h2>
       <div class="code-block">
         <button type="button" id="copy" aria-label="Copy installation commands">Copy</button>
-        <pre><code id="commands">git clone https://github.com/sahinraj/ios-swift-master-copilot.git
-cd ios-swift-master-copilot
-./install.sh personal</code></pre>
+        <pre><code id="commands">curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash</code></pre>
       </div>
-      <p>For Copilot for Xcode or a team repository, run <code>./install.sh project ~/path/to/YourApp</code>.</p>
+      <p>For Copilot for Xcode or a team repository, run <code>curl -fsSL https://sahinraj.github.io/ios-swift-master-copilot/install.sh | bash -s -- project ~/path/to/YourApp</code>. Prefer to read the script first? Clone the repo and run <code>./install.sh personal</code>.</p>
     </section>
   </main>
 

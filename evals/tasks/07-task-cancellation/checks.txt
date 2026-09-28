@@ -1,0 +1,3 @@
++ \.task\(id:	uses .task(id:) for automatic cancellation
+- DispatchQueue	no GCD
+- Timer\.scheduledTimer	no manual timers
