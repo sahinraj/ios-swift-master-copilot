@@ -28,4 +28,4 @@ cd "$DEST"
 if [[ $# -eq 0 ]]; then
   set -- personal
 fi
-./install.sh "$@"
+IOS_SWIFT_MASTER_BOOTSTRAP="https://sahinraj.github.io/ios-swift-master-copilot/install.sh" ./install.sh "$@"
