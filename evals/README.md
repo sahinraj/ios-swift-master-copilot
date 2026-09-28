@@ -11,16 +11,26 @@ The scorer only looks inside fenced code blocks, so an answer that explains "don
 
 ## Running it
 
-1. Start a fresh chat **without** the skill (uninstall it or use a plain agent). Paste each `prompt.md` and save the full reply as `evals/results/baseline/<task-id>.md`.
-2. Install the skill, start a fresh chat, pick the **iOS Swift Master** agent (or prefix with `/ios-swift-master`) and do the same into `evals/results/with-skill/`.
-3. Score both:
+The collector copies each prompt to your clipboard and saves each reply for you (macOS):
 
 ```bash
+evals/collect.sh baseline      # run with the skill uninstalled
+evals/collect.sh with-skill    # run with the skill installed and the iOS Swift Master agent picked
 evals/score.sh evals/results/baseline evals/results/with-skill
-VERBOSE=1 evals/score.sh evals/results/with-skill   # print each missed check
 ```
 
-You get a Markdown table you can paste straight into a README, a PR or a post. Use the same model for both runs and note which one you used, so the comparison is fair.
+For every task: paste the prompt into a **new** Copilot chat, copy the full reply, press Enter. It catches an empty clipboard or a clipboard that still holds the prompt, skips tasks already saved, and `q` stops so you can pick up later. Use `--redo` to redo a run.
+
+To take the skill out for the baseline and put it back after:
+
+```bash
+mv ~/.copilot/skills/ios-swift-master /tmp/ism-off && mv ~/.copilot/agents/ios-swift-master.agent.md /tmp/ism-agent-off
+mv /tmp/ism-off ~/.copilot/skills/ios-swift-master && mv /tmp/ism-agent-off ~/.copilot/agents/ios-swift-master.agent.md
+```
+
+Restart VS Code after each move. Use the same model for both runs and note which one, so the comparison is fair.
+
+`VERBOSE=1 evals/score.sh evals/results/with-skill` prints each missed check. The output is a Markdown table you can paste into a README, a PR or a post.
 
 ## Adding a task
 
